@@ -1020,12 +1020,12 @@ public class Assert {
         throw new AssertionError(message);
     }
     
-    public static <T extends Throwable> boolean assertGreaterThan(T o1, T o2, java.util.Comparator<T> comparator) {
+    public static <T> void assertGreaterThan(T o1, T o2, java.util.Comparator<T> comparator) {
         if (comparator.compare(o1, o2) > 0) {
-            return true;
+            return;
         }
         else {
-            return false;
+            fail("The first object is not greater than the second object");
         }
     }
 }
