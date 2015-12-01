@@ -1020,12 +1020,41 @@ public class Assert {
         throw new AssertionError(message);
     }
     
-    public static <T> void assertGreaterThan(T o1, T o2, java.util.Comparator<T> comparator) {
-        if (comparator.compare(o1, o2) > 0) {
-            return;
-        }
-        else {
-            fail("The first object is not greater than the second object");
-        }
-    }
+  public static void assertGreaterThanInt(int o1, int o2){
+      if (o1 > o2) 
+          return;
+      else 
+          fail("The first int is not grater than the second int");
+  }
+  
+  public static void assertGreaterThanDouble (double o1, double o2) {
+      if (o1 > o2)
+          return;
+      else 
+          fail("The first double is not grater than the second double");
+  }
+  
+  public static void assertGreaterThanFloat (float o1, float o2) {
+      if (o1 > o2)
+          return;
+      else 
+          fail("The first float is not grater than the second float");
+  }
+  
+  public static void assertGreaterThanChar (char o1, char o2) {
+      if (o1 > o2)
+          return;
+      else 
+          fail("The first char is not grater than the second float");
+  }
+  
+  public static <T> void assertGreaterThan(T o1, T o2, java.util.Comparator<T> comparator) {
+      if (comparator.compare(o1, o2) > 0) {
+          return;
+      }
+      else {
+          fail("The first object is not greater than the second object");
+      }
+  }
+  
 }

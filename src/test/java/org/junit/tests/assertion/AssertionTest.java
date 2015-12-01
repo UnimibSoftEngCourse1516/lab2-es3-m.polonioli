@@ -1,3 +1,4 @@
+
 package org.junit.tests.assertion;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -756,6 +757,14 @@ public class AssertionTest {
     }
     
     @Test
+    public void greaterThanPrimitives(){
+        Assert.assertGreaterThanInt(15, 10);
+        Assert.assertGreaterThanDouble(10.5, 2.5);
+        Assert.assertGreaterThanFloat(15f, 5f);
+        Assert.assertGreaterThanChar('z', 'a');
+    }
+    
+    @Test
     public void greaterThan() {
         Comparator<Double> comparator = new Comparator<Double>() {
             public int compare(Double o1, Double o2) {
@@ -766,3 +775,4 @@ public class AssertionTest {
     }
     
 }
+
