@@ -16,6 +16,7 @@ import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.Comparator;
 
 import org.junit.Assert;
 import org.junit.Assert.ThrowingRunnable;
@@ -753,4 +754,15 @@ public class AssertionTest {
             }
         };
     }
+    
+    @Test
+    public void greaterThan() {
+        Comparator<Double> comparator = new Comparator<Double>() {
+            public int compare(Double o1, Double o2) {
+                return o1.compareTo(o2);
+            }
+        };
+        Assert.assertGreaterThan(1.5, 0.5, comparator);
+    }
+    
 }
